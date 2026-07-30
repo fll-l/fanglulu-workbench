@@ -898,7 +898,7 @@ App.foodEdit=(meal,fid,ds)=>{
   let img=f.img||"";
   const mealName=MEALS.find(([k])=>k===meal)[1];
   openModal((fid?"编辑":"添加")+"食物 · "+mealName,
-    '<div class="form-row" style="text-align:center"><div class="food-img" id="fm-img" style="width:74px;height:74px;margin:0 auto;cursor:pointer;font-size:30px">'+(img?'<img src="'+img+'">':"📷")+'</div><input type="file" id="fm-file" accept="image/*" capture="environment" style="display:none"><div class="muted" style="margin-top:6px">点击拍照 / 选择食物图片</div></div>'
+    '<div class="form-row" style="text-align:center"><div class="food-img" id="fm-img" style="width:74px;height:74px;margin:0 auto;cursor:pointer;font-size:30px">'+(img?'<img src="'+img+'">':"📷")+'</div><input type="file" id="fm-file" accept="image/*" style="display:none"><div class="muted" style="margin-top:6px">点击拍照或选择食物图片</div></div>'
     +'<div class="form-row"><label>食物名称</label><input id="fm-name" value="'+esc(f.name)+'"></div>'
     +'<div class="form-row"><label>重量（g）</label><input type="number" id="fm-wt" value="'+esc(f.weight)+'"></div>'
     +'<div class="modal-actions"><button class="btn ghost" id="fm-cancel">取消</button><button class="btn" id="fm-save">保存</button></div>',
