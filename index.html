@@ -98,8 +98,8 @@ body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;min-he
   /* 防止横向溢出 */
   *{max-width:100%;}
   .page,.card,.modal{overflow-wrap:break-word;}
-  /* 移动端 toast 提示下移到状态栏/刘海下方，避免与顶部时间重合 */
-  .toast-wrap{top:calc(38px + env(safe-area-inset-top));}
+  /* 移动端 toast 提示移到屏幕底部、固定底栏上方，彻底避开顶部状态栏/标题遮挡 */
+  .toast-wrap{top:auto;bottom:calc(96px + env(safe-area-inset-bottom));flex-direction:column-reverse;}
 }
 /* 极窄屏（小手机）底部 Tab 更紧凑、字号更小，避免 8 项挤换行 */
 @media (max-width:380px){
