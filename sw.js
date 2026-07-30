@@ -1,6 +1,6 @@
 // 方璐璐的工作台 — Service Worker
 // 缓存 App Shell，支持离线打开；部署到任意 HTTPS 站点即可被 iOS/Android/鸿蒙识别为可安装 App
-const CACHE = "fll-workbench-v10";
+const CACHE = "fll-workbench-v11";
 const SHELL = [
   "./",
   "./index.html",
