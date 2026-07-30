@@ -305,6 +305,12 @@ textarea.note-input:focus{border-color:var(--accent);}
 .calc-grid button{padding:13px 0;border:none;border-radius:10px;background:#f4f5f9;font-size:17px;cursor:pointer;}
 .calc-grid button.op{background:var(--accent-light);color:var(--accent-deep);}
 .calc-grid button.eq{background:var(--accent);color:#fff;grid-column:span 2;}
+/* 计算金额弹窗：加宽 + 压低高度 */
+.modal.calc-modal{width:min(560px,96vw)!important;max-width:96vw!important;padding:14px 16px!important;max-height:82vh;}
+.modal.calc-modal h3{margin-bottom:12px;}
+.modal.calc-modal .calc-display{padding:10px 14px;font-size:20px;min-height:44px;margin-bottom:8px;}
+.modal.calc-modal .calc-grid{gap:6px;}
+.modal.calc-modal .calc-grid button{padding:10px 0;font-size:18px;}
 /* 经期列表 */
 .pd-row{display:flex;align-items:center;justify-content:space-between;padding:13px 4px;border-bottom:1px solid var(--line);font-size:14.5px;}
 .pd-row:last-child{border-bottom:none;}
@@ -412,10 +418,10 @@ function confirmModal(msg,noMaskClose){
 const cnDate=ds=>{const[y,m,d]=ds.split("-");return y+"年"+(+m)+"月"+(+d)+"日"};
 const weekCn=ds=>"星期"+"日一二三四五六"[new Date(ds+"T00:00:00").getDay()];
 
-function openModal(title,bodyHTML,onMount,noMaskClose){
+function openModal(title,bodyHTML,onMount,noMaskClose,cls){
   const root=document.getElementById("modal-root");
   const mask=document.createElement("div");mask.className="modal-mask";
-  mask.innerHTML='<div class="modal"><h3>'+esc(title)+'</h3><div class="modal-body">'+bodyHTML+'</div></div>';
+  mask.innerHTML='<div class="modal'+(cls?' '+cls:'')+'"><h3>'+esc(title)+'</h3><div class="modal-body">'+bodyHTML+'</div></div>';
   if(!noMaskClose)mask.addEventListener("click",e=>{if(e.target===mask)close()});
   function close(){mask.remove()}
   root.appendChild(mask);
@@ -1464,7 +1470,7 @@ function openCalc(initVal,onDone){
         upd();
       });
       upd();
-    });
+    }, false, "calc-modal");
 }
 
 /* ================= 8. 碎碎念 ================= */
