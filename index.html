@@ -292,10 +292,6 @@ textarea.note-input:focus{border-color:var(--accent);}
 .modal input,.modal select{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;outline:none;background:#fafbfd;text-align:center;}
 .modal input:focus{border-color:var(--accent);}
 .modal-actions{display:flex;gap:10px;justify-content:center;flex-wrap:nowrap;margin-top:18px;}
-/* 饮食添加/编辑食物弹窗：内容整体居中，按钮竖排两行（与全局一行居中区分） */
-.diet-modal-center{text-align:center;}
-.diet-modal-center .modal-actions{flex-direction:column;gap:8px;align-items:stretch;flex-wrap:nowrap;}
-.diet-modal-center .modal-actions .btn{width:100%;}
 /* 计算器 */
 .calc-display{background:#f4f5f9;border-radius:10px;padding:14px;text-align:right;font-size:22px;margin-bottom:10px;min-height:54px;word-break:break-all;}
 .calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
@@ -902,12 +898,10 @@ App.foodEdit=(meal,fid,ds)=>{
   let img=f.img||"";
   const mealName=MEALS.find(([k])=>k===meal)[1];
   openModal((fid?"编辑":"添加")+"食物 · "+mealName,
-    '<div class="diet-modal-center">'
-    +'<div class="form-row" style="text-align:center"><div class="food-img" id="fm-img" style="width:74px;height:74px;margin:0 auto;cursor:pointer;font-size:30px">'+(img?'<img src="'+img+'">':"📷")+'</div><input type="file" id="fm-file" accept="image/*" capture="environment" style="display:none"><div class="muted" style="margin-top:6px">点击拍照 / 选择食物图片</div></div>'
+    '<div class="form-row" style="text-align:center"><div class="food-img" id="fm-img" style="width:74px;height:74px;margin:0 auto;cursor:pointer;font-size:30px">'+(img?'<img src="'+img+'">':"📷")+'</div><input type="file" id="fm-file" accept="image/*" capture="environment" style="display:none"><div class="muted" style="margin-top:6px">点击拍照 / 选择食物图片</div></div>'
     +'<div class="form-row"><label>食物名称</label><input id="fm-name" value="'+esc(f.name)+'"></div>'
     +'<div class="form-row"><label>重量（g）</label><input type="number" id="fm-wt" value="'+esc(f.weight)+'"></div>'
-    +'<div class="modal-actions"><button class="btn ghost" id="fm-cancel">取消</button><button class="btn" id="fm-save">保存</button></div>'
-    +'</div>',
+    +'<div class="modal-actions"><button class="btn ghost" id="fm-cancel">取消</button><button class="btn" id="fm-save">保存</button></div>',
     (m,close)=>{
       m.querySelector("#fm-img").onclick=()=>m.querySelector("#fm-file").click();
       m.querySelector("#fm-file").onchange=e=>{if(e.target.files[0])readImage(e.target.files[0],url=>{img=url;m.querySelector("#fm-img").innerHTML='<img src="'+url+'">';});};
