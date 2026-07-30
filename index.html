@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no, apple-mobile-web-app-capable=yes, apple-mobile-web-app-status-bar-style=black-translucent, apple-mobile-web-app-title=工作台">
-<meta name="theme-color" content="#6c7cf2">
+<meta name="theme-color" content="#9CAA85">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -16,10 +16,10 @@
 <title>方璐璐的工作台</title>
 <style>
 :root{
-  --accent:#6c7cf2; --accent-light:#eef0ff; --accent-deep:#5a64d8;
-  --accent2:#8ea0f3;
-  --bg:#f3f4fb; --card:#ffffff; --text:#3a3f58; --sub:#8b91a9;
-  --line:#ecedf4;
+  --accent:#9CAA85; --accent-light:#E8E2CC; --accent-deep:#5C6855;
+  --accent2:#B5BFA0;
+  --bg:#EFEAD8; --card:#FAF6E8; --text:#4A4A38; --sub:#8B8A75;
+  --line:#DCD5BD;
   --green:#7fd0a0; --green-bg:#e4f6ec;
   --purple:#b493e6; --purple-bg:#ede4fa;
   --pink-deep:#e85a8a; --pink-bg:#ffe3ec;
@@ -28,11 +28,11 @@
 body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;min-height:100dvh;}
 /* ===== 侧边栏 ===== */
 .sidebar{width:210px;background:var(--card);border-right:1px solid var(--line);padding:24px 14px;position:fixed;top:0;bottom:0;left:0;overflow-y:auto;}
-.logo{font-size:19px;font-weight:700;text-align:center;margin-bottom:26px;background:linear-gradient(120deg,#8a93f7,#6c7cf2);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.5px;}
+.logo{font-size:19px;font-weight:700;text-align:center;margin-bottom:26px;background:linear-gradient(120deg,#B5BFA0,#6c7cf2);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.5px;}
 .logo small{display:block;font-size:11px;color:var(--sub);font-weight:400;margin-top:4px;letter-spacing:2px;background:none;-webkit-background-clip:initial;background-clip:initial;}
 .nav-item{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:12px;cursor:pointer;color:var(--sub);font-size:14.5px;margin-bottom:6px;transition:.15s;}
 .nav-item:hover{background:var(--accent-light);color:var(--accent-deep);}
-.nav-item.active{background:var(--accent-light);color:var(--accent-deep);font-weight:600;box-shadow:0 2px 8px rgba(108,124,242,.18);}
+.nav-item.active{background:var(--accent-light);color:var(--accent-deep);font-weight:600;box-shadow:0 2px 8px rgba(156,170,133,.22);}
 .main{margin-left:210px;flex:1;padding:26px 30px;max-width:980px;}
 .page{display:none;}
 .page.active{display:block;animation:fade .25s;}
@@ -75,7 +75,7 @@ body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;min-he
   /* 输入框放大，避免 iOS 误触/自动放大 */
   .add-row input,.modal input,.modal select,textarea.note-input{font-size:16px;padding:11px 13px;text-align:center;}
   /* iOS 原生 date/time/select 默认忽略 text-align，需 reset appearance 才能居中 */
-  .modal input[type=date],.modal input[type=time],.modal select{-webkit-appearance:none;appearance:none;background:#fafbfd;}
+  .modal input[type=date],.modal input[type=time],.modal select{-webkit-appearance:none;appearance:none;background:#FBF6E6;}
   .modal select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239aa3b2' stroke-width='3'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:34px;}
   .btn{padding:10px 16px;font-size:15px;}
   .btn.sm{padding:7px 12px;font-size:13.5px;}
@@ -112,7 +112,7 @@ body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;min-he
 .icon-btn{background:none;border:none;cursor:pointer;font-size:15px;color:#c3c9d4;padding:3px;}
 .icon-btn:hover{color:var(--accent-deep);}
 /* ===== 待办 ===== */
-.progress-banner{background:linear-gradient(120deg,#8a93f7,#6c7cf2);color:#fff;border-radius:16px;padding:18px 22px;margin-bottom:16px;}
+.progress-banner{background:linear-gradient(120deg,#B5BFA0,#6c7cf2);color:#fff;border-radius:16px;padding:18px 22px;margin-bottom:16px;}
 .progress-banner .big{font-size:22px;font-weight:700;margin-top:4px;}
 .pbar{height:8px;background:rgba(255,255,255,.35);border-radius:5px;margin-top:10px;overflow:hidden;}
 .pbar>div{height:100%;background:#fff;border-radius:5px;transition:.3s;}
@@ -124,7 +124,7 @@ body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;min-he
 .tag{font-size:10.5px;background:var(--accent-light);color:var(--accent-deep);padding:2px 7px;border-radius:6px;}
 /* ===== 运动健身：可点击任务卡片（每行 3 个） ===== */
 .fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.fit-task{display:flex;flex-direction:column;gap:8px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#fafbfd;transition:.15s;}
+.fit-task{display:flex;flex-direction:column;gap:8px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#FBF6E6;transition:.15s;}
 .fit-task:hover{border-color:var(--accent);}
 .fit-task-head{display:flex;justify-content:space-between;align-items:center;min-height:18px;}
 .fit-btn{flex:none;width:100%;text-align:center;background:var(--accent-light);color:var(--accent-deep);border:none;border-radius:12px;padding:16px 12px;cursor:pointer;font-size:14.5px;transition:.15s;font-weight:500;}
@@ -137,7 +137,7 @@ body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;min-he
 .fit-min{font-size:11px;color:var(--sub);text-align:center;}
 .fit-task.done .fit-min{color:#b8bec9;}
 .add-row{display:flex;gap:10px;margin-top:14px;}
-.add-row input{flex:1;border:1px solid var(--line);border-radius:10px;padding:9px 13px;font-size:13.5px;outline:none;background:#fafbfd;}
+.add-row input{flex:1;border:1px solid var(--line);border-radius:10px;padding:9px 13px;font-size:13.5px;outline:none;background:#FBF6E6;}
 .add-row input:focus{border-color:var(--accent);}
 /* ===== 日历 ===== */
 .calendar{user-select:none;}
@@ -250,14 +250,14 @@ body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;min-he
 /* ===== 体重 ===== */
 .wprog{margin:18px 0 8px;}
 .wprog-bar{height:14px;background:#eef0f4;border-radius:8px;position:relative;overflow:visible;}
-.wprog-bar>div{height:100%;background:linear-gradient(90deg,#8a93f7,var(--accent-deep));border-radius:8px;transition:.4s;}
+.wprog-bar>div{height:100%;background:linear-gradient(90deg,#B5BFA0,var(--accent-deep));border-radius:8px;transition:.4s;}
 .wprog-pct{position:absolute;top:-26px;transform:translateX(-50%);background:var(--accent-deep);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:8px;white-space:nowrap;}
 .wprog-ends{display:flex;justify-content:space-between;font-size:12px;color:var(--sub);margin-top:8px;}
 .chart-wrap{cursor:default;}
 /* ===== 记账 ===== */
 .money-big{font-size:32px;font-weight:700;color:var(--accent-deep);margin:6px 0 12px;}
 .money-row{display:flex;gap:12px;flex-wrap:wrap;}
-.money-row .m{flex:1;min-width:100px;background:#fafbfd;border-radius:10px;padding:10px 14px;font-size:12.5px;color:var(--sub);}
+.money-row .m{flex:1;min-width:100px;background:#FBF6E6;border-radius:10px;padding:10px 14px;font-size:12.5px;color:var(--sub);}
 .money-row .m b{display:block;font-size:16px;color:var(--text);margin-top:3px;}
 .bill-item{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line);font-size:13.5px;}
 .bill-item:last-child{border-bottom:none;}
@@ -269,9 +269,9 @@ body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;min-he
 .day-date{font-size:14px;font-weight:600;color:var(--text);}
 .day-today{display:inline-block;margin-left:6px;font-size:11px;font-weight:600;color:#fff;background:var(--accent);border-radius:6px;padding:1px 6px;vertical-align:1px;}
 .day-net{font-size:13px;font-weight:600;}
-.day-body{background:#fafbfd;border-radius:12px;padding:2px 12px;border:1px solid var(--line);}
+.day-body{background:#FBF6E6;border-radius:12px;padding:2px 12px;border:1px solid var(--line);}
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0;}
-.cat-item{padding:12px 6px;border-radius:12px;background:#fafbfd;border:2px solid transparent;text-align:center;cursor:pointer;font-size:13px;}
+.cat-item{padding:12px 6px;border-radius:12px;background:#FBF6E6;border:2px solid transparent;text-align:center;cursor:pointer;font-size:13px;}
 .cat-item.active{border-color:var(--accent);background:var(--accent-light);color:var(--accent-deep);}
 .type-tabs{display:flex;gap:0;background:#eef0f4;border-radius:10px;padding:4px;margin-bottom:6px;}
 .type-tabs div{flex:1;text-align:center;padding:8px;border-radius:8px;cursor:pointer;font-size:14px;}
@@ -281,7 +281,7 @@ body{background:var(--bg);color:var(--text);display:flex;min-height:100vh;min-he
 .note-item:last-child{border-bottom:none;}
 .note-item .nd{font-size:12px;color:var(--sub);margin-bottom:5px;display:flex;justify-content:space-between;}
 .note-item .nt{font-size:14px;line-height:1.7;white-space:pre-wrap;}
-textarea.note-input{width:100%;min-height:110px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;resize:vertical;outline:none;background:#fafbfd;line-height:1.7;}
+textarea.note-input{width:100%;min-height:110px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;resize:vertical;outline:none;background:#FBF6E6;line-height:1.7;}
 textarea.note-input:focus{border-color:var(--accent);}
 /* ===== 弹窗 ===== */
 .modal-mask{position:fixed;inset:0;background:rgba(30,35,45,.45);display:flex;align-items:center;justify-content:center;z-index:99;}
@@ -289,7 +289,7 @@ textarea.note-input:focus{border-color:var(--accent);}
 .modal h3{font-size:16px;margin-bottom:16px;}
 .modal .form-row{margin-bottom:13px;}
 .modal label{display:block;font-size:12.5px;color:var(--sub);margin-bottom:5px;}
-.modal input,.modal select{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;outline:none;background:#fafbfd;text-align:center;}
+.modal input,.modal select{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;outline:none;background:#FBF6E6;text-align:center;}
 .modal input:focus{border-color:var(--accent);}
 .modal-actions{display:flex;gap:10px;justify-content:center;flex-wrap:nowrap;margin-top:18px;}
 /* 计算器 */
@@ -1105,7 +1105,7 @@ function pdFertCardHTML(){
   let todayMark="";
   if(todayP!=null){const tp=todayP.toFixed(1);const tx=X(todayIdx),ty=Y(todayP);todayMark='<circle cx="'+tx+'" cy="'+ty+'" r="4" fill="#6c7cf2" stroke="#fff" stroke-width="1.5"/><text x="'+tx+'" y="'+(ty+16)+'" font-size="10" fill="#5a64d8" text-anchor="middle">今日怀孕几率<tspan x="'+tx+'" dy="14" font-size="12" font-weight="bold">'+tp+'%</tspan></text>';}
   const svg='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;display:block">'+grid+xlab
-    +'<polygon points="'+areaPoly+'" fill="rgba(108,124,242,0.08)"/>'
+    +'<polygon points="'+areaPoly+'" fill="rgba(156,170,133,0.10)"/>'
     +segs+ov+todayMark+'</svg>';
   const leg='<div class="fert-legend"><span><i style="background:#e85a8a"></i>月经期</span><span><i style="background:#4db6ac"></i>卵泡期/黄体期</span><span><i style="background:#9b59b6"></i>排卵期</span></div>';
   const note=todayP!=null?'今日怀孕几率约 <b>'+todayP.toFixed(1)+'%</b>（根据经期记录估算，仅供参考）':'怀孕几率为参考估算（根据经期记录估算，仅供参考）';
