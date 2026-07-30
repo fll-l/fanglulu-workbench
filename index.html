@@ -586,7 +586,7 @@ App.petDelRec=i=>{
 };
 App.petEdit=id=>{
   const pets=store.get(PETS_KEY,[]);
-  const p=id?pets.find(x=>x.id===id):{name:"",breed:"",birthday:"",weight:"",avatar:""};
+  const p=id?pets.find(x=>x.id===id):{name:"",breed:"",birthday:todayStr(),weight:"",avatar:""};
   let avatar=p.avatar||"";
   openModal(id?"编辑宠物信息":"添加宠物",
     '<div class="form-row" style="text-align:center"><div class="pet-avatar" id="pm-av" style="margin:0 auto;cursor:pointer;width:70px;height:70px">'+(avatar?'<img src="'+avatar+'">':"🐱")+'</div><input type="file" id="pm-file" accept="image/*" style="display:none"><div class="muted" style="margin-top:6px">点击更换头像</div></div>'
